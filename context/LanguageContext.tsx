@@ -332,13 +332,15 @@ const translations: Record<Language, Record<string, string>> = {
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>("es");
+  const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
-    // Check localStorage for saved language preference
+    // Check localStorage for saved language preference after hydration
     const savedLang = localStorage.getItem("language") as Language;
     if (savedLang && (savedLang === "es" || savedLang === "en")) {
       setLanguageState(savedLang);
     }
+    setIsHydrated(true);
   }, []);
 
   const setLanguage = (lang: Language) => {
@@ -346,12 +348,15 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     localStorage.setItem("language", lang);
   };
 
+  // Prevent hydration mismatch by using default language until mounted
+  const currentLanguage = isHydrated ? language : "es";
+
   const t = (key: string): string => {
-    return translations[language][key] || key;
+    return translations[currentLanguage][key] || key;
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language: currentLanguage, setLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );
