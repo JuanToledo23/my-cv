@@ -1,14 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, MapPin, ArrowUpRight, Heart } from "lucide-react";
+import {
+  Mail,
+  Linkedin,
+  Github,
+  MapPin,
+  ArrowUpRight,
+  Heart,
+} from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 const socialLinks = [
   {
     icon: Linkedin,
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/juan-alberto-toledo-tello-128a771a6/",
+    href: "https://www.linkedin.com/in/juan-alberto-toledo-tello",
     color: "hover:text-blue-400",
   },
   {
@@ -48,7 +55,7 @@ export default function Footer() {
           <p className="text-[#a1a1aa] max-w-xl mx-auto mb-8">
             {t("footer.description")}
           </p>
-          
+
           <a
             href="mailto:johntoledot@gmail.com"
             className="btn-primary inline-flex items-center gap-2"
@@ -141,11 +148,13 @@ export default function Footer() {
           className="pt-8 border-t border-[#27272a] flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <div className="flex items-center gap-1 text-sm text-[#71717a]">
-            <span>© 2024 Juan Alberto Toledo Tello. {t("footer.builtWith")}</span>
+            <span>
+              © 2024 Juan Alberto Toledo Tello. {t("footer.builtWith")}
+            </span>
             <Heart className="w-3.5 h-3.5 text-red-400 fill-red-400" />
             <span>{t("footer.and")}</span>
           </div>
-          
+
           <div className="flex items-center gap-4 text-sm text-[#71717a]">
             <span>Next.js</span>
             <span className="w-1 h-1 rounded-full bg-[#3f3f46]" />

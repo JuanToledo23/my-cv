@@ -56,7 +56,11 @@ export default function Projects() {
       solution: t("project2.solution"),
       architecture: "Event-Driven + CQRS",
       metrics: [
-        { label: t("project2.metric1.label"), value: "30min → 8min", icon: Clock },
+        {
+          label: t("project2.metric1.label"),
+          value: "30min → 8min",
+          icon: Clock,
+        },
         { label: t("project2.metric2.label"), value: "0%", icon: Shield },
         { label: t("project2.metric3.label"), value: "70%", icon: TrendingUp },
       ],
@@ -68,7 +72,14 @@ export default function Projects() {
       icon: MessageSquare,
       iconColor: "text-purple-400",
       iconBg: "bg-purple-500/10",
-      tech: ["BuilderBot", "Meta API", "AWS ECS Fargate", "TypeScript", "PostgreSQL", "S3"],
+      tech: [
+        "BuilderBot",
+        "Meta API",
+        "AWS ECS Fargate",
+        "TypeScript",
+        "PostgreSQL",
+        "S3",
+      ],
       challenge: t("project3.challenge"),
       solution: t("project3.solution"),
       aiHighlight: t("project3.aiHighlight"),
@@ -106,7 +117,11 @@ export default function Projects() {
       solution: t("project5.solution"),
       architecture: "Orchestrator + 5 Lambdas",
       metrics: [
-        { label: t("project5.metric1.label"), value: "30min → 5min", icon: Clock },
+        {
+          label: t("project5.metric1.label"),
+          value: "30min → 5min",
+          icon: Clock,
+        },
         { label: t("project5.metric2.label"), value: "98%", icon: TrendingUp },
         { label: t("project5.metric3.label"), value: "80%", icon: TrendingUp },
       ],
@@ -160,7 +175,9 @@ export default function Projects() {
               key={project.id}
               project={project}
               isExpanded={expandedId === project.id}
-              onToggle={() => setExpandedId(expandedId === project.id ? null : project.id)}
+              onToggle={() =>
+                setExpandedId(expandedId === project.id ? null : project.id)
+              }
               t={t}
             />
           ))}
@@ -175,7 +192,7 @@ export default function Projects() {
           className="text-center mt-12"
         >
           <a
-            href="https://www.linkedin.com/in/juan-alberto-toledo-tello-128a771a6/"
+            href="https://www.linkedin.com/in/juan-alberto-toledo-tello"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-[#a1a1aa] hover:text-[#fafafa] transition-colors"
@@ -204,7 +221,17 @@ type Project = {
   metrics: { label: string; value: string; icon: React.ElementType }[];
 };
 
-function ProjectCard({ project, isExpanded, onToggle, t }: { project: Project; isExpanded: boolean; onToggle: () => void; t: (key: string) => string }) {
+function ProjectCard({
+  project,
+  isExpanded,
+  onToggle,
+  t,
+}: {
+  project: Project;
+  isExpanded: boolean;
+  onToggle: () => void;
+  t: (key: string) => string;
+}) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
@@ -239,13 +266,18 @@ function ProjectCard({ project, isExpanded, onToggle, t }: { project: Project; i
                   {project.subtitle}
                 </span>
               </div>
-              
+
               <div className="flex flex-wrap gap-1.5 mt-2">
-                {project.tech.slice(0, isExpanded ? undefined : 4).map((tech) => (
-                  <span key={tech} className="text-xs px-2 py-0.5 rounded bg-[#27272a] text-[#a1a1aa]">
-                    {tech}
-                  </span>
-                ))}
+                {project.tech
+                  .slice(0, isExpanded ? undefined : 4)
+                  .map((tech) => (
+                    <span
+                      key={tech}
+                      className="text-xs px-2 py-0.5 rounded bg-[#27272a] text-[#a1a1aa]"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 {!isExpanded && project.tech.length > 4 && (
                   <span className="text-xs px-2 py-0.5 rounded bg-[#27272a] text-[#71717a]">
                     +{project.tech.length - 4}
@@ -269,7 +301,9 @@ function ProjectCard({ project, isExpanded, onToggle, t }: { project: Project; i
               <div key={metric.label} className="flex items-center gap-2">
                 <metric.icon className={`w-4 h-4 ${project.iconColor}`} />
                 <div>
-                  <div className="text-sm font-semibold text-[#fafafa]">{metric.value}</div>
+                  <div className="text-sm font-semibold text-[#fafafa]">
+                    {metric.value}
+                  </div>
                   <div className="text-xs text-[#71717a]">{metric.label}</div>
                 </div>
               </div>
@@ -290,25 +324,37 @@ function ProjectCard({ project, isExpanded, onToggle, t }: { project: Project; i
                 <div className="p-4 rounded-xl bg-[#0f0f11] border border-[#27272a]">
                   <div className="flex items-center gap-2 mb-2">
                     <div className="w-2 h-2 rounded-full bg-red-400" />
-                    <span className="text-sm font-medium text-[#fafafa]">{t("projects.challenge")}</span>
+                    <span className="text-sm font-medium text-[#fafafa]">
+                      {t("projects.challenge")}
+                    </span>
                   </div>
-                  <p className="text-sm text-[#a1a1aa] leading-relaxed">{project.challenge}</p>
+                  <p className="text-sm text-[#a1a1aa] leading-relaxed">
+                    {project.challenge}
+                  </p>
                 </div>
 
                 <div className="p-4 rounded-xl bg-[#0f0f11] border border-[#27272a]">
                   <div className="flex items-center gap-2 mb-2">
                     <div className="w-2 h-2 rounded-full bg-green-400" />
-                    <span className="text-sm font-medium text-[#fafafa]">{t("projects.solution")}</span>
+                    <span className="text-sm font-medium text-[#fafafa]">
+                      {t("projects.solution")}
+                    </span>
                   </div>
-                  <p className="text-sm text-[#a1a1aa] leading-relaxed">{project.solution}</p>
+                  <p className="text-sm text-[#a1a1aa] leading-relaxed">
+                    {project.solution}
+                  </p>
                 </div>
 
                 {project.architecture && (
                   <div className="flex items-center gap-3 p-3 rounded-lg bg-blue-950/20 border border-blue-500/20">
                     <Layers className="w-5 h-5 text-blue-400 shrink-0" />
                     <div>
-                      <span className="text-xs text-blue-400 font-medium">{t("projects.architecture")}:</span>
-                      <span className="text-sm text-[#fafafa] ml-2">{project.architecture}</span>
+                      <span className="text-xs text-blue-400 font-medium">
+                        {t("projects.architecture")}:
+                      </span>
+                      <span className="text-sm text-[#fafafa] ml-2">
+                        {project.architecture}
+                      </span>
                     </div>
                   </div>
                 )}
@@ -317,8 +363,12 @@ function ProjectCard({ project, isExpanded, onToggle, t }: { project: Project; i
                   <div className="flex items-center gap-3 p-3 rounded-lg bg-purple-950/20 border border-purple-500/20">
                     <Bot className="w-5 h-5 text-purple-400 shrink-0" />
                     <div>
-                      <span className="text-xs text-purple-400 font-medium">{t("projects.aiHighlight")}:</span>
-                      <span className="text-sm text-[#fafafa] ml-2">{project.aiHighlight}</span>
+                      <span className="text-xs text-purple-400 font-medium">
+                        {t("projects.aiHighlight")}:
+                      </span>
+                      <span className="text-sm text-[#fafafa] ml-2">
+                        {project.aiHighlight}
+                      </span>
                     </div>
                   </div>
                 )}
