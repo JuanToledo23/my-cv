@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
@@ -10,35 +10,35 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+});
+
 export const metadata: Metadata = {
-  title: "Juan Alberto Toledo Tello | AI-Augmented Solutions Architect",
+  title: "Juan Toledo | Solutions Architect & Full Stack Engineer",
   description:
-    "Arquitectando Sistemas de Alto Rendimiento con Ingeniería Aumentada por IA. Senior Full Stack Engineer & Solutions Architect con 9+ años de experiencia en AWS Serverless, Arquitectura Event-Driven, y Sistemas en Tiempo Real.",
+    "Arquitecto de Soluciones & Ingeniero Full Stack Senior. Desarrollo web a medida, landing pages, micro-SaaS y consultoría técnica. 9+ años de experiencia con AWS, React, Node.js y desarrollo aumentado por IA.",
   keywords: [
     "Solutions Architect",
     "Full Stack Developer",
+    "Freelance",
+    "Desarrollo Web",
+    "Landing Pages",
+    "Micro-SaaS",
     "AWS Serverless",
     "Node.js",
     "TypeScript",
     "React",
     "Next.js",
-    "AI-Augmented Development",
-    "Event-Driven Architecture",
-    "Arquitecto de Soluciones",
     "México",
   ],
   authors: [{ name: "Juan Alberto Toledo Tello" }],
   openGraph: {
-    title: "Juan Alberto Toledo Tello | AI-Augmented Solutions Architect",
+    title: "Juan Toledo | Solutions Architect & Full Stack Engineer",
     description:
-      "Arquitectando Sistemas de Alto Rendimiento con Ingeniería Aumentada por IA.",
+      "Desarrollo web a medida, landing pages, micro-SaaS y consultoría técnica. 9+ años de experiencia.",
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Juan Alberto Toledo Tello | AI-Augmented Solutions Architect",
-    description:
-      "Arquitectando Sistemas de Alto Rendimiento con Ingeniería Aumentada por IA.",
   },
 };
 
@@ -50,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="es" className="dark" suppressHydrationWarning>
       <body
-        className={`${inter.variable} antialiased bg-[#09090b] text-[#fafafa] selection:bg-blue-500/30`}
+        className={`${inter.variable} ${geistMono.variable} antialiased bg-[#09090b] text-[#ececec] selection:bg-emerald-500/25`}
         suppressHydrationWarning
       >
         <LanguageProvider>{children}</LanguageProvider>
