@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import { HtmlShell } from "@/components/HtmlShell";
 import { content } from "@/content";
+import { SITE_URL } from "@/lib/site";
 
 const { en, es } = content;
 
-export const metadata: Metadata = { title: `404 — ${en.notFound.title}` };
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: `404 — ${en.notFound.title}`,
+  robots: { index: false },
+};
 
 export default function GlobalNotFound() {
   return (

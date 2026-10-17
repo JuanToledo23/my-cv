@@ -14,10 +14,13 @@ export function Footer({ footer, switchLink }: Props) {
         <a
           href={switchLink.href}
           hrefLang={switchLink.lang}
-          aria-label={switchLink.ariaLabel}
-          className="font-semibold text-accent underline-offset-4 hover:text-accent-ink hover:underline"
+            className="font-semibold text-accent underline-offset-4 hover:text-accent-ink hover:underline"
         >
           {switchLink.label}
+          <span lang={switchLink.lang} className="sr-only">
+            {" "}
+            · {switchLink.srText}
+          </span>
         </a>
       </div>
     </footer>

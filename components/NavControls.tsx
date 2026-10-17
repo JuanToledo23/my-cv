@@ -27,11 +27,14 @@ export function NavControls({ nav }: { nav: SiteContent["nav"] }) {
       <a
         href={nav.switch.href}
         hrefLang={nav.switch.lang}
-        aria-label={nav.switch.ariaLabel}
         onClick={switchLocale}
         className="rounded-md px-2 py-1.5 text-meta font-semibold text-accent underline-offset-4 hover:text-accent-ink hover:underline"
       >
         {nav.switch.label}
+        <span lang={nav.switch.lang} className="sr-only">
+          {" "}
+          · {nav.switch.srText}
+        </span>
       </a>
       <button
         type="button"

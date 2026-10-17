@@ -8,6 +8,10 @@ export const es: SiteContent = {
       "Entrego productos completos de la definición a producción con una metodología spec-driven asistida por IA. Abierto a roles senior, founding engineer y cofundador técnico.",
     path: "/es",
     ogLocale: "es_MX",
+    ogTagline: "Ingeniero Full-Stack Senior · Productos de punta a punta",
+    ogAlt: "Juan Toledo, Ingeniero Full-Stack Senior. Productos de punta a punta.",
+    jobTitle: "Ingeniero Full-Stack Senior",
+    locality: "Ciudad de México",
   },
   nav: {
     home: "Juan Toledo",
@@ -20,7 +24,7 @@ export const es: SiteContent = {
       { label: "Experiencia", href: "#experience" },
       { label: "Contacto", href: "#contact" },
     ],
-    switch: { label: "EN", href: "/", lang: "en", ariaLabel: "View in English" },
+    switch: { label: "EN", href: "/", lang: "en", srText: "View in English" },
   },
   hero: {
     kicker: "Juan Alberto Toledo Tello · Ciudad de México · Remoto",

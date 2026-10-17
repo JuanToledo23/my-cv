@@ -1,5 +1,6 @@
 import { content } from "@/content";
 import type { Locale } from "@/content/types";
+import { jsonLdString, personJsonLd } from "@/lib/jsonld";
 import { Contact } from "./Contact";
 import { Footer } from "./Footer";
 import { Hero } from "./Hero";
@@ -14,6 +15,10 @@ export function SitePage({ locale }: { locale: Locale }) {
   const c = content[locale];
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdString(personJsonLd(locale)) }}
+      />
       <TopBar nav={c.nav} />
       <main id="main" tabIndex={-1} className="outline-none">
         <Hero hero={c.hero} />

@@ -27,6 +27,12 @@ export type SiteContent = {
     path: string;
     /** OpenGraph locale, e.g. "en_US". */
     ogLocale: string;
+    /** Second line of the generated share image. */
+    ogTagline: string;
+    ogAlt: string;
+    /** JSON-LD Person fields that change per language. */
+    jobTitle: string;
+    locality: string;
   };
   nav: {
     home: string;
@@ -34,7 +40,7 @@ export type SiteContent = {
     menu: string;
     links: Link[];
     /** Link to the same page in the other locale. */
-    switch: Link & { lang: Locale; ariaLabel: string };
+    switch: Link & { lang: Locale; srText: string };
   };
   hero: {
     kicker: string;
