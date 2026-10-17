@@ -9,7 +9,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "a11y": "next build && node scripts/a11y.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
@@ -21,12 +22,14 @@
     "zod": "^4.6.7"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^22",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "eslint": "^9",
     "eslint-config-next": "16.4.2",
+    "playwright": "^1.64.1",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3"
   }

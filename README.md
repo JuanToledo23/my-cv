@@ -14,6 +14,7 @@ Personal site of Juan Alberto Toledo Tello. One page per locale: `/` (English) a
 npm install
 npm run dev     # http://localhost:3000
 npm run build && npm run lint
+npm run a11y    # axe check on both routes (once: npx playwright install chromium)
 ```
 
 The contact form needs `RESEND_API_KEY` in `.env` (and in the Vercel project settings). CV PDFs are served from `public/cv/`.
