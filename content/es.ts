@@ -154,6 +154,7 @@ export const es: SiteContent = {
       },
       {
         role: "Roles anteriores",
+        compact: true,
         dates: "2017 – 2023",
         text: "Frontend Developer en PALO IT (2022–2023) y moons (2021–2022); Frontend/UX Developer en Grupo Salinas (2019–2021); Front End Developer en INEEL (2017–2019).",
       },

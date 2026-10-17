@@ -153,6 +153,7 @@ export const en: SiteContent = {
       },
       {
         role: "Earlier",
+        compact: true,
         dates: "2017 – 2023",
         text: "Frontend Developer at PALO IT (2022–2023) and moons (2021–2022); Frontend/UX Developer at Grupo Salinas (2019–2021); Front End Developer at INEEL (2017–2019).",
       },

@@ -66,7 +66,8 @@ export type SiteContent = {
   experience: {
     label: string;
     title: string;
-    items: { role: string; dates: string; text: string }[];
+    /** compact: rendered as a short line (earlier roles). */
+    items: { role: string; dates: string; text: string; compact?: boolean }[];
     educationLabel: string;
     education: string;
   };
